@@ -20,7 +20,7 @@
   </div>
   <button type="submit" class="btn btn-primary">保存</button>
 </form> -->
-<%= form_for @board do |f| %>
+<!-- <%= form_for @board do |f| %>
 <div class="form-group">
   <%= f.label :name, '名前' %> <%= f.text_field :name, class: 'form-control' %>
 </div>
@@ -32,4 +32,5 @@
   <%= f.label :body, '本文' %> <%= f.text_area :body, class: 'form-control',
   rows: 10 %>
 </div>
-<%= f.submit '保存', class: 'btn btn-primary' %> <% end %>
+<%= f.submit '保存', class: 'btn btn-primary' %> <% end %> -->
+<%= render partial: 'form', locals: {board: @board } %>

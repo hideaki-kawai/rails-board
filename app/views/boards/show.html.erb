@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class="card">
+<!-- <div class="card">
   <div class="card-header">
     <h4><%= @board.title %></h4>
   </div>
@@ -16,4 +16,7 @@
     <p class="card-text"><%= simple_format(@board.body) %></p>
     <p class="text-end font-weight-bold me-5"><%= @board.name %></p>
   </div>
-</div>
+</div> -->
+
+<!-- <%= render partial: 'board', object: @board %> -->
+<%= render @board %>

@@ -1,6 +1,6 @@
 <div class="d-flex align-items-center">
   <h1>掲示板一覧</h1>
-  <div class="ms-auto boards__linkBox">
+  <div class="ml-auto boards__linkBox">
     <!-- <a href="boards/new" class="btn btn-outline-dark">新規作成</a> -->
     <%= link_to '新規作成', new_board_path, class: 'btn btn-outline-dark' %>
   </div>
@@ -34,3 +34,4 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @boards %>

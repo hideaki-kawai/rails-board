@@ -33,10 +33,13 @@ gem 'jbuilder', '~> 2.5'
 # bootstrapの追加
 # gem 'bootstrap','~> 4.0.0'
 # gem 'mini_racer'
-gem 'bootstrap', '~> 5.0.0'
+gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 
 gem 'turbolinks', '~> 5'
+
+# gem 'kaminari'
+gem 'kaminari', git: 'https://github.com/kaminari/kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

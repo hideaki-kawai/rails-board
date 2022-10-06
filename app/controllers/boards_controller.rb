@@ -13,8 +13,15 @@ class BoardsController < ApplicationController
     def create
         # boardオブジェクトには作成したデータのidなどが返ってくる
         board = Board.create(board_params)
-        flash[:notice] = "「#{board.title}」の掲示板を作成しました"
-        redirect_to board
+        if board.save
+            flash[:notice] = "「#{board.title}」の掲示板を作成しました"
+            redirect_to board
+        else
+            redirect_to :back, flash: {
+              board: board,
+              error_messages: board.errors.full_messages
+            }
+        end
     end
 
     def show

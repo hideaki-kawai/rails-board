@@ -12,7 +12,8 @@ class BoardsController < ApplicationController
 
     def create
         # boardオブジェクトには作成したデータのidなどが返ってくる
-        @board = Board.create(board_params)
+        board = Board.create(board_params)
+        flash[:notice] = "「#{board.title}」の掲示板を作成しました"
         redirect_to board
     end
 
@@ -36,7 +37,7 @@ class BoardsController < ApplicationController
         # board = Board.find(params[:id])
         @board.delete
 
-        redirect_to boards_path
+        redirect_to boards_path, flash: { notice: "「#{@board.title}」の掲示板が削除されました" }
     end
 
     # 以下、外部から呼び出されることのないメソッド

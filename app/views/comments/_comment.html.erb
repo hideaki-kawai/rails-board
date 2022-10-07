@@ -3,5 +3,9 @@
   <div class="p-comment__bottomLine">
     <span><%= comment.name %></span>
     <span><%= comment.created_at.to_s(:datetime_jp) %></span>
+    <span
+      ><%= button_to '削除', comment, method: :delete, data: { confirm:
+      '削除してもよろしいですか？'} %></span
+    >
   </div>
 </div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # root 'boards#index'
   # get 'boards', to: 'boards#index'
@@ -7,4 +8,7 @@ Rails.application.routes.draw do
   # get 'boards/:id', to: 'boards#show'
   # resources :boards, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :boards
+  # get 'comments/create'
+  # get 'comments/destroy'
+  resources :comments, only: %i[create destroy]
 end

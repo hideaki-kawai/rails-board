@@ -23,4 +23,5 @@
 <% end %>
 
 <!-- <%= render partial: 'board', object: @board %> -->
-<%= render @board %>
+<%= render @board %> <%= render partial: 'comment_form', locals: { comment:
+@comment } %>

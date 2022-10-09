@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy' 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  # root 'boards#index'
+  root 'home#index'
+  # get 'users/new'
+  # get 'users/create'
+  resources :users, only: %i[new create]
   # get 'boards', to: 'boards#index'
   # get 'boards/new', to: 'boards#new'
   # post 'boards', to: 'boards#create'
@@ -20,7 +23,4 @@ Rails.application.routes.draw do
   # get 'comments/destroy'
   resources :comments, only: %i[create destroy]
   
-  # get 'users/new'
-  # get 'users/create'
-  resources :users, only: %i[new create]
 end

@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
-  
-  get 'users/new'
 
-  get 'users/create'
+  # get 'users/me'
+  get 'mypage', to: 'users#me'
 
-  get 'users/me'
-
-  get 'home/index'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
+  # get 'sessions/create'
+  # get 'sessions/destroy'
+  post 'login', to: 'sessions#create' 
+  delete 'logout', to: 'sessions#destroy' 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # root 'boards#index'
@@ -23,4 +19,8 @@ Rails.application.routes.draw do
   # get 'comments/create'
   # get 'comments/destroy'
   resources :comments, only: %i[create destroy]
+  
+  # get 'users/new'
+  # get 'users/create'
+  resources :users, only: %i[new create]
 end
